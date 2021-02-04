@@ -121,5 +121,4 @@ st_sigmas <- lapply( results,
                      function(i) { cov2cor ( matrix( getmatrix( i, "sigma"  ),
                                                      ny, ny, TRUE, 
                                                      list( yvars, yvars  ) ) ) } )
-# Save the matrices
-save( st_sigmas, file = 'st_sigmas.Rdata' )
+

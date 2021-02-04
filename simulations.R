@@ -11,7 +11,7 @@ library( "dplyr" )
 #  1. Higher order factor model ( 'g' model )
 #  2. Bifactor model
 #  2. Network model (Kan et al., 2020)
-load( 'st_sigmas.Rdata' )
+load( url ( "https://github.com/KJKan/pame_I/blob/master/st_sigmas.Rdata?raw=true" ) )
 
 # Setup
 set.seed( 03012021 ) # = start internship Tasos

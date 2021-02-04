@@ -1,7 +1,7 @@
 # ---------------- Data Simulation
 
 # Clear working memory
-rm(list = ls())
+rm( list = ls() )
 
 # Load require packages
 library( "psychonetrics" )

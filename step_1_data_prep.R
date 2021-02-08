@@ -91,7 +91,7 @@ NWModel_US <- NWModel_US %>% prune( alpha = 0.01, recursive = TRUE )
 NWModel_US <- NWModel_US %>% stepup 
 
 # Get the adjacency matrix 
-# This the confirmatory network, to be fitted in the Hungarian sample
+# this is the confirmatory network to be fitted in the Hungarian sample
 omega <- 1*( getmatrix( NWModel_US, "omega" ) !=0 )
 
 

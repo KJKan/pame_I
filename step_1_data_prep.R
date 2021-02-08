@@ -40,7 +40,7 @@ ne        <- length( lvars )
 
 # theoretical pattern of factor loadings (simple structure)
 lambda_g  <- lambda_b <- matrix( c ( #P  V  W  S  g 
-                                     1, 0, 0, 0, 0,# BD
+                                     1, 0, 0, 0, 0, # BD
                                      0, 1, 0, 0, 0, # SI
                                      0, 0, 1, 0, 0, # DS
                                      1, 0, 0, 0, 0, # MR
@@ -61,7 +61,7 @@ lambda_g  <- lambda_b <- matrix( c ( #P  V  W  S  g
 
 # In the higher order factor model, 
 # g is the explanadum of the correlation among the first order factors
-beta_g     <- matrix( c ( #P  V  W  S g  
+beta_g     <- matrix( c ( #P  V  W  S  g  
                            0, 0, 0, 0, 1, # P
                            0, 0, 0, 0, 1, # V
                            0, 0, 0, 0, 1, # W

@@ -127,9 +127,9 @@ results   <- lapply( models, function(i) i %>% runmodel )
 # Extract the (standardized) model implied covariance matrices
 # i.e, the model implied correlation matrices
 st_sigmas <- lapply( results, 
-                     function( i ) { cov2cor ( matrix( getmatrix( i, "sigma"  ),
-                                                       ny, 
-                                                       ny, 
-                                                       byrow = TRUE, 
-                                                       dimnames = list( yvars, yvars  ) ) ) } )
+                     function( i ) { 
+                       cov2cor ( matrix( getmatrix( i, "sigma"  ),
+                                         ny, ny, byrow = TRUE, 
+                                         dimnames = list( yvars, yvars  ) ) ) 
+                     } )
 

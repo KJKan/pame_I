@@ -1,4 +1,10 @@
-# -------------- Preparation; getting the model implied matrices
+# -------------------------------------------------- #
+#                                                    #
+# Step 1: Extract model implied correlation matrices #
+#                                                    #
+# -------------------------------------------------- #
+
+# -------------- Preparation
 
 # Clear working memory
 rm(list = ls())
@@ -9,6 +15,8 @@ library( "qgraph" )
 library( "dplyr" )
 library( "MASS" )
 
+# -------------- Reas in data 
+
 # Load WAIS-IV correlation matrices
 load( url ( "https://github.com/KJKan/mcfarland/blob/master/WAIS_Hungary.Rdata?raw=true" ) )
 load( url ( "https://github.com/KJKan/mcfarland/blob/master/WAIS_US.Rdata?raw=true" ) )
@@ -17,7 +25,7 @@ load( url ( "https://github.com/KJKan/mcfarland/blob/master/WAIS_US.Rdata?raw=tr
 n_US      <- 1800 
 n_Hungary <- 1112 
 
-# ----
+# --------------  Define variables and matrices
 
 # The WAIS-IV subtests; observed variables 
 yvars     <- colnames( WAIS_US )
@@ -96,7 +104,7 @@ omega <- 1*( getmatrix( NWModel_US, "omega" ) !=0 )
 
 
 
-# ----- The models in psychonetrics
+# -------------- Define the models in psychonetrics
 
 # Higher order factor model
 HFModel   <- lvm( covs = cov, 
@@ -121,8 +129,14 @@ NWModel   <- ggm( covs = cov,
 # Put the models in a list
 models    <- list( HFModel, BFModel, NWModel )
 
+
+# -------------- Run the models
+
 # Run the models on the observed Hungarian WAIS-IV covariance (correlation) matrix 
 results   <- lapply( models, function(i) i %>% runmodel ) 
+                    
+                    
+# -------------- Extract the results
 
 # Extract the (standardized) model implied covariance matrices
 # i.e, the model implied correlation matrices

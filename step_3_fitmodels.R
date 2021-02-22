@@ -6,7 +6,7 @@ rm(list = ls())
 # Load required packages and functions
 library( "psychonetrics" )
 library( "dplyr" )
-source( '0_helperfunctions.R' )
+source( 'helperfunctions.R' )
 
 # load models and simulated data
 load( url( 'https://www.dropbox.com/s/8o197jshr0itki9/models.Rdata?raw=TRUE' ) ) # models

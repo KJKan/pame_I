@@ -3,11 +3,11 @@
 # Clear working memory
 rm(list = ls())
 
-# Load required packages and functions
+# Load required packages
 library( "psychonetrics" )
-library( "MASS" )
 library( "dplyr" )
-source( 'helperfunctions.R' )
+library( "devtools" )
+source_url( 'https://raw.githubusercontent.com/KJKan/pame_I/main/helperfunctions.R' )
 
 # load models and standardized model implied covariance matrices
 load( url( 'https://www.dropbox.com/s/8o197jshr0itki9/models.Rdata?raw=TRUE' ) ) # models

@@ -1,13 +1,13 @@
 # -------------- Preparation; getting the model implied matrices
 
 # Clear working memory
-rm( list = ls() )
+rm(list = ls())
 
-# Load required packages and functions
+# Load required packages
 library( "psychonetrics" )
-library( "qgraph" )
 library( "dplyr" )
-source( 'https://github.com/KJKan/pame_I/blob/main/helperfunctions.R' )
+library( "devtools" )
+source_url( 'https://raw.githubusercontent.com/KJKan/pame_I/main/helperfunctions.R' )
 
 # Load WAIS-IV correlation matrices
 load( url ( "https://github.com/KJKan/mcfarland/blob/master/WAIS_Hungary.Rdata?raw=true" ) )

@@ -7,7 +7,7 @@ rm( list = ls() )
 library( "psychonetrics" )
 library( "qgraph" )
 library( "dplyr" )
-source( 'helperfunctions.R' )
+source( 'https://github.com/KJKan/pame_I/blob/main/helperfunctions.R' )
 
 # Load WAIS-IV correlation matrices
 load( url ( "https://github.com/KJKan/mcfarland/blob/master/WAIS_Hungary.Rdata?raw=true" ) )

@@ -6,7 +6,7 @@ rm(list = ls())
 # Load required packages
 library( "psychonetrics" )
 library( "dplyr" )
-source( '0_helperfunctions.R' )
+source( 'helperfunctions.R' )
 
 # load list of results 
 load( url( 'https://www.dropbox.com/s/w3yqqxdz54ic3rd/simres.Rdata?raw=TRUE' ) )

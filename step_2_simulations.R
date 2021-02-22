@@ -1,33 +1,27 @@
-# ---------------- Data Simulation
+# ----- Data simulation
 
 # Clear working memory
-rm( list = ls() )
+rm(list = ls())
 
-# Load require packages
+# Load required packages and functions
 library( "psychonetrics" )
+library( "MASS" )
 library( "dplyr" )
+source( '0_helperfunctions.R' )
 
-# Load the Hugarian WAIS-IV model implied matrices that will be used to generate data with
-#  1. Higher order factor model ( 'g' model )
-#  2. Bifactor model
-#  2. Network model (Kan et al., 2020)
-load( url ( "https://github.com/KJKan/pame_I/blob/main/st_sigmas.Rdata?raw=true" ) )
+# load models and standardized model implied covariance matrices
+load( url( 'https://www.dropbox.com/s/8o197jshr0itki9/models.Rdata?raw=TRUE' ) ) # models
+load( url( 'https://www.dropbox.com/s/0e55spt5nzmigei/st_sigmas.Rdata?raw=TRUE' ) ) # st_sigmas
 
 # Setup
-set.seed( 03012021 ) # = start internship Tasos
-nrep <- 1000         # number of replications per condition
-n    <- 1112         # sample size used ( Hungarian WAIS-IV sample size )
+set.seed( 03012021 )
+nrep <- 1000                      # number of replications per condition
+ny   <- ncol( st_sigmas[[1]] )    # number of variables 
+n    <- 1112                      # sample size used ( Hungarian WAIS-IV sample size )
 
-# Simulate data  
-simdata <- lapply( st_sigmas, 
-                   function(i)
-                     { 
-                      replicate( nrep, 
-                                 mvrnorm( n, rep( 0, ncol( i ) ), i ),
-                                 simplify = FALSE ) 
-                     }
-                   )
-      
-
-
-
+# generate nrep data sets according to the sigmas
+simdat <- lapply( st_sigmas, 
+                  function( sigma ) replicate( nrep, 
+                                               mvrnorm( n, 
+                                                        rep( 0, ny ), 
+                                                        sigma ) ) ) 

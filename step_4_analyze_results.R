@@ -15,6 +15,7 @@ load( url( 'https://www.dropbox.com/s/w3yqqxdz54ic3rd/simres.Rdata?raw=TRUE' ) )
 # Extract results
 rmseas  <- extractFitm( simres, 'rmsea'  )
 cfis    <- extractFitm( simres, 'cfi'    )
+tlis    <- extractFitm( simres, 'tli'    )
 nfis    <- extractFitm( simres, 'nfi'    )
 chisqs  <- extractFitm( simres, 'chisq'  )
 dfs     <- extractFitm( simres, 'df'     )
@@ -32,6 +33,7 @@ ps_diff <- lapply( dchisqs, function(i) 1- pchisq( i, df = 11 ) )
 #pdf( 'simplots.pdf' )
 histFitm( rmseas )  # near perfect if the fitted model is the true model
 histFitm( cfis )    # near perfect if the fitted model is the true model
+histFitm( tlis )    # near perfect if the fitted model is the true model
 histFitm( nfis )    # near perfect if the fitted model is the true model
 histFitm( chisqs )  # distributed around df if the fitted model is the true model
 histFitm( pvalues ) # uniformly distributed if the fitted model is the true model
@@ -39,25 +41,36 @@ histFitm( pvalues ) # uniformly distributed if the fitted model is the true mode
                     # (accept when the fitted model is a model in which the true model is nested)
 #dev.off()
 
-# tables (AIC and BIC pick the true model when the true model is included in the comparison )
-lapply( aics, function(i) table( apply(i, 1, which.min ) ) )
-lapply( bics, function(i) table( apply(i, 1, which.min ) ) )
+# tables (do fit measures pick the true model when the true model is included in the comparison )
+#lapply( rmseas, function(i) table( apply( i, 1, which.min ) ) )
+#lapply( cfis,   function(i) table( apply( i, 1, which.max ) ) )
+#lapply( nfis,   function(i) table( apply( i, 1, which.min ) ) )
+lapply( aics,   function(i) table( apply( i, 1, which.min ) ) )
+lapply( bics,   function(i) table( apply( i, 1, which.min ) ) )
 
 
+   
+# ------------ investigate hypothesis 
 
-# ------------ test hypothesis 
-
-# = 'if the network is not considered, the bifactor model is preferred over the higher order factor model 
+# = 'if the network is the true model but not considered,
+# the bifactor model is preferred over the higher order factor model' 
 # ( as a summary of the data ) 
 
-lapply( aics, function(i) table( apply(i[,1:2], 1, which.min ) ) )$NW
-lapply( bics, function(i) table( apply(i[,1:2], 1, which.min ) ) )$NW
+lapply( rmseas, function(i) table( apply( i[,1:2], 1, which.min ) ) )$NW
+lapply( cfis,   function(i) table( apply( i[,1:2], 1, which.max ) ) )$NW
+lapply( nfis,   function(i) table( apply( i[,1:2], 1, which.max ) ) )$NW
+lapply( aics,   function(i) table( apply( i[,1:2], 1, which.min ) ) )$NW
+lapply( bics,   function(i) table( apply( i[,1:2], 1, which.min ) ) )$NW
+
 
 # And what can be expected if the bifactor model would be the true model?
 
 # AIC and BIC prefer the bifactor model
-lapply( aics, function(i) table( apply(i[,1:2], 1, which.min ) ) )$BF
-lapply( bics, function(i) table( apply(i[,1:2], 1, which.min ) ) )$BF
+lapply( rmseas, function(i) table( apply( i[,1:2], 1, which.min ) ) )$BF
+lapply( cfis,   function(i) table( apply( i[,1:2], 1, which.max ) ) )$BF
+lapply( nfis,   function(i) table( apply( i[,1:2], 1, which.max ) ) )$BF
+lapply( aics,   function(i) table( apply( i[,1:2], 1, which.min ) ) )$BF
+lapply( bics,   function(i) table( apply( i[,1:2], 1, which.min ) ) )$BF
 
 
 # Show in figures

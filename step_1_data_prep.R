@@ -10,12 +10,12 @@ library( "devtools" )
 source_url( 'https://raw.githubusercontent.com/KJKan/pame_I/main/helperfunctions.R' )
 
 # Load WAIS-IV correlation matrices
-load( url ( "https://github.com/KJKan/mcfarland/blob/master/WAIS_Hungary.Rdata?raw=true" ) )
 load( url ( "https://github.com/KJKan/mcfarland/blob/master/WAIS_US.Rdata?raw=true" ) )
+load( url ( "https://github.com/KJKan/pame_I/blob/main/WAIS_Germany.Rdata?raw=true" ) )
 
 # WAIS-IV sample Sizes
 n_US      <- 1800 
-n_Hungary <- 1112 
+n_Germany <- 1425
 
 # The WAIS-IV subtests; observed variables 
 yvars     <- colnames( WAIS_US )
@@ -24,7 +24,7 @@ yvars     <- colnames( WAIS_US )
 ny        <- length( yvars ) 
 
 # covariance matrix used in psychonetrics models
-cov       <- ( n_Hungary - 1 )/n_Hungary*WAIS_Hungary
+cov       <- ( n_Germany - 1 )/n_Germany*WAIS_Germany
 
 # latent constructs to be measured (etas)
 lvars     <- c( "P", # Perceptual
@@ -82,7 +82,7 @@ NWModel_US <- NWModel_US %>% prune( alpha = 0.01, recursive = TRUE )
 # Aim for further improvement
 NWModel_US <- NWModel_US %>% stepup 
 
-# Extract the adjacency matrix and use it as confirmatory network in the Hungarian sample
+# Extract the adjacency matrix and use it as confirmatory network in the German sample
 omega      <- 1*( getmatrix( NWModel_US, "omega" ) !=0 )
 
 # ----- The three models in psychonetrics
@@ -109,7 +109,7 @@ models    <- list( HF = paramsHF, BF = paramsBF, NW = paramsNW )
 
 
 # ----- Fit our models on the Hungarian sample covariance matrix 
-results   <- lapply( models, function(i) fitModel( cov, i, n_Hungary ) )
+results   <- lapply( models, function(i) fitModel( cov, i, n_Germany ) )
 
 # Extract the model standardized model implied covariance (correlation) matrices
 st_sigmas <- lapply( results, 

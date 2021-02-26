@@ -27,7 +27,7 @@ As, mentioned, the data concerned the WAIS-IV German validation sample data (cor
 Let's clear our workspace first (run this line only if you really want that; you will lose everything you had in the workspace)
 
 ```{r}
-rm(list = ls())
+rm( list = ls() )
 ```
 
 # References <a name="References"></a>

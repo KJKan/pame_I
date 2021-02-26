@@ -1,7 +1,7 @@
 # ----- Data analysis
 
 # Clear working memory
-rm(list = ls())
+#rm(list = ls())
 
 # Load required packages
 library( "psychonetrics" )
@@ -10,7 +10,7 @@ library( "devtools" )
 source_url( 'https://raw.githubusercontent.com/KJKan/pame_I/main/helperfunctions.R' )
 
 # load list of results 
-load( url( 'https://www.dropbox.com/s/w3yqqxdz54ic3rd/simres.Rdata?raw=TRUE' ) )
+#load( url( 'https://www.dropbox.com/s/w3yqqxdz54ic3rd/simres.Rdata?raw=TRUE' ) )
 
 # Extract results
 rmseas  <- extractFitm( simres, 'rmsea'  )
@@ -37,19 +37,20 @@ histFitm( tlis )    # near perfect if the fitted model is the true model
 histFitm( nfis )    # near perfect if the fitted model is the true model
 histFitm( chisqs )  # distributed around df if the fitted model is the true model
 histFitm( pvalues ) # uniformly distributed if the fitted model is the true model
-                    # skewed to the right if the model is not the true model 
-                    # (accept when the fitted model is a model in which the true model is nested)
+# skewed to the right if the model is not the true model 
+# (accept when the fitted model is a model in which the true model is nested)
 #dev.off()
 
 # tables (do fit measures pick the true model when the true model is included in the comparison )
-#lapply( rmseas, function(i) table( apply( i, 1, which.min ) ) )
-#lapply( cfis,   function(i) table( apply( i, 1, which.max ) ) )
-#lapply( nfis,   function(i) table( apply( i, 1, which.min ) ) )
+lapply( rmseas, function(i) table( apply( i, 1, which.min ) ) )
+lapply( cfis,   function(i) table( apply( i, 1, which.max ) ) )
+lapply( tlis,   function(i) table( apply( i, 1, which.max ) ) )
+lapply( nfis,   function(i) table( apply( i, 1, which.max ) ) )
 lapply( aics,   function(i) table( apply( i, 1, which.min ) ) )
 lapply( bics,   function(i) table( apply( i, 1, which.min ) ) )
 
 
-   
+
 # ------------ investigate hypothesis 
 
 # = 'if the network is the true model but not considered,

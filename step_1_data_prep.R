@@ -108,7 +108,7 @@ paramsNW  <- list( omega = omega,
 models    <- list( HF = paramsHF, BF = paramsBF, NW = paramsNW )
 
 
-# ----- Fit our models on the Hungarian sample covariance matrix 
+# ----- Fit our models on the German sample covariance matrix 
 results   <- lapply( models, function(i) fitModel( cov, i, n_Germany ) )
 
 # Extract the model standardized model implied covariance (correlation) matrices

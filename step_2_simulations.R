@@ -17,7 +17,7 @@ load( url( 'https://www.dropbox.com/s/0e55spt5nzmigei/st_sigmas.Rdata?raw=TRUE' 
 set.seed( 03012021 )
 nrep <- 1000                      # number of replications per condition
 ny   <- ncol( st_sigmas[[1]] )    # number of variables 
-n    <- 1112                      # sample size used ( Hungarian WAIS-IV sample size )
+n    <- 1425                      # sample size used ( German WAIS-IV sample size )
 
 # generate nrep data sets according to the sigmas
 simdat <- lapply( st_sigmas, 

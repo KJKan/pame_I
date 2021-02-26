@@ -1,4 +1,4 @@
-# Readme
+# Why bifactor models fit better than higher order factor models: A network perspective
 
 ## Table of content
 - [Introduction](#Intro)

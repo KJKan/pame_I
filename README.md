@@ -60,13 +60,30 @@ What subtests does the WAIS-IV include?
 ```{r}
 yvars     <- colnames( WAIS_US )
 ```
+These are:
+
+Block Design (BD)
+Similarities (SI)
+Digit Span (DS)
+Matrix Reasoning (MR or MA)
+Vocabulary (VC or VO)
+Arithmetic (AR)
+Symbol Search (SS)
+Visual Puzzles (VP)
+Information (IN)
+Coding (CO)
+Letter Number Sequencing (LN)
+Figure Weights (FW)
+Comprehension (CO)
+Cancellation (CA)
+Picture Completion (PC)
 How many subtests are that?
 
 ```{r}
 # Number of observed variables
 ny        <- length( yvars ) 
 ```
-
+So 15 in total.
 
 ```{r}
 # covariance matrix used in psychonetrics models

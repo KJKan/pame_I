@@ -3,8 +3,8 @@
 ## Table of content
 - [Introduction](#Intro)
 - [Simulation study](#Simstudy)
-         - [Step 1: Preparation](#Preparation)
-         - [Step 2: Data Simulation](#Simulations)
+          - [Step 1: Preparation](#Preparation)
+          - [Step 2: Data Simulation](#Simulations)
 - [References](#References)
 
 # Introduction <a name="Intro"></a>

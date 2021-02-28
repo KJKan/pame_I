@@ -2,8 +2,9 @@
 
 ## Table of content
 - [Introduction](#Intro)
-- [Simulations](#Simulations)
-       - [Measurement Model](#Measurement)
+- [Simulation study](#Simstudy)
+       - [Step 1: Preparation](#Preparation)
+       - [Step 2: Data Simulation](#Simulations)
 - [References](#References)
 
 # Introduction <a name="Intro"></a>
@@ -23,9 +24,9 @@ Next, we show the results in case the network model would not be considered and 
 
 As, mentioned, the data concerned the WAIS-IV German validation sample data (correlation matrix). With thanks to Jens Lange for providing these data.
 
-# Simulations <a name="Simulations"></a>
+# Simulation Study <a name="Simstudy"></a>
 
-## Preparation <a name="Preparation"></a>
+## Step 1: Preparation <a name="Preparation"></a>
 
 Let's clear our workspace first (run this line only if you really want that; you will lose everything you had in the workspace)
 
@@ -219,6 +220,33 @@ st_sigmas <- lapply( results,
                                                      ny, ny, TRUE, 
                                                      list( yvars, yvars  ) ) ) } )
                                                      
+```
+
+## Data Simulation <a name="Simulations"></a>
+
+In order to make our findings replicatable, we chose the following seed
+
+```{r}
+set.seed( 03012021 ) # start of Tasos' internship
+```
+
+We simulate a 1000 data sets for each model implied correlation matrix.
+
+```{r}
+nrep <- 1000                      # number of replications per condition
+```
+
+The sample size is taken the same as the (German) sample size, from which the model implied correlation matrices were extracted.
+
+We are ready to simulate!
+
+
+```{r}
+simdat <- lapply( st_sigmas, 
+                  function( sigma ) replicate( nrep, 
+                                               mvrnorm( n_Germany, 
+                                                        rep( 0, ny ), 
+                                                        sigma ) ) ) 
 ```
 
 

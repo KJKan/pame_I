@@ -252,7 +252,7 @@ simdat <- lapply( st_sigmas,
 
 ## Step 3: Fit the Models <a name="Modelfits"></a>
 
-Fit all (3) models on all (3x1000) data sets. NoteL this might take a few hours!
+Fit all (3) models on all (3x1000) data sets. Note: this might take a few hours!
 
 ```{r}
 

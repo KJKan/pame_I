@@ -5,6 +5,7 @@
 - [Simulation study](#Simstudy)
      - [Step 1: Preparation](#Preparation)
      - [Step 2: Data Simulation](#Simulations)
+     - [Step 3: Fit the models](#Modelfits)
 - [References](#References)
 
 # Introduction <a name="Intro"></a>
@@ -178,7 +179,7 @@ However, now we have such a network, we can fit it confirmatory on any other sam
 
 ```{r}
 # Extract the adjacency matrix and use it as confirmatory network in the German sample
-omega      <- 1*( getmatrix( NWModel_US, "omega" ) !=0 )
+omega <- 1*( getmatrix( NWModel_US, "omega" ) !=0 )
 ```
 
 Here the aim is to fit all three models on the German standardization sample data. Let's first collect - per model - all important matrices and other pieces of information
@@ -202,13 +203,13 @@ paramsNW  <- list( omega = omega,
                    type = 'ggm' )
 
 # Store them in a list
-models    <- list( HF = paramsHF, BF = paramsBF, NW = paramsNW )
+models <- list( HF = paramsHF, BF = paramsBF, NW = paramsNW )
 ```
 
 Next actually fit the models on the data. With function lapply, we only need one line of code.
 
 ```{r}
-results   <- lapply( models, function(i) fitModel( cov, i, n_Germany ) )
+results <- lapply( models, function(i) fitModel( cov, i, n_Germany ) )
 ```
 
 The model implied correlations, we will use in the next step, the actual data generation. Let's extract those correlations from the results.
@@ -222,7 +223,7 @@ st_sigmas <- lapply( results,
                                                      
 ```
 
-## Data Simulation <a name="Simulations"></a>
+## Step 2: Data Simulation <a name="Simulations"></a>
 
 In order to make our findings replicatable, we chose the following seed
 
@@ -233,7 +234,7 @@ set.seed( 03012021 ) # start of Tasos' internship
 We simulate a 1000 data sets for each model implied correlation matrix.
 
 ```{r}
-nrep <- 1000                      # number of replications per condition
+nrep <- 1000
 ```
 
 The sample size is taken the same as the (German) sample size, from which the model implied correlation matrices were extracted.
@@ -249,6 +250,19 @@ simdat <- lapply( st_sigmas,
                                                         sigma ) ) ) 
 ```
 
+## Step 3: Fit the Models <a name="Modelfits"></a>
+
+Fit all (3) models on all (3x1000) data sets. NoteL this might take a few hours!
+
+```{r}
+
+simres <- lapply( models, 
+                  function( model ) lapply( simdat, 
+                                            function(i) apply( i, 
+                                                               3, 
+                                                               function( dat ) fitModel( dat, 
+                                                                                         model ) ) ) )
+```
 
 # References <a name="References"></a>
 

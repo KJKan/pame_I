@@ -360,6 +360,8 @@ hist( unlist( rmseas$NW[,'BF'] ),  main = paste( 'BF close fit',       '\nTrue m
 
 ![](https://raw.githubusercontent.com/KJKan/pame_I/main/Pame.jpeg)
 
+![](https://raw.githubusercontent.com/KJKan/pame_I/main/Cucina%20Table%201.jpg)
+
 
 # Conclusions <a name="Conclusion"></a>
 

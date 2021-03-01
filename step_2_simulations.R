@@ -7,6 +7,7 @@ rm(list = ls())
 library( "psychonetrics" )
 library( "dplyr" )
 library( "devtools" )
+libraray( "MASS")
 source_url( 'https://raw.githubusercontent.com/KJKan/pame_I/main/helperfunctions.R' )
 
 # load models and standardized model implied covariance matrices

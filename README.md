@@ -189,7 +189,7 @@ Here the aim is to fit all three models on the German standardization sample dat
 ```{r}
 # parameters of the Higher Order Factor Model (HF)
 paramsHF  <- list( lambda = lambda_g, 
-                   beta = beta_g,
+                   beta = beta_g,                                                                                                                                                                                                                                                   
                    sigma_zeta = 'empty',
                    identification = "variance",
                    type = 'lvm' ) 

@@ -106,7 +106,7 @@ lvars  <- c( "P", # Perceptual
 ```
  So 4 in total. In g theory, the variable g explains the correlations among those factors.
  
-![](https://raw.githubusercontent.com/KJKan/mcfarland/master/SecondOrdergModel_.jpg)
+![](https://raw.githubusercontent.com/KJKan/pame_I/main/gfactormodel.jpg)
 
 ```{r}
 ne <- length( lvars ) 
@@ -137,6 +137,9 @@ lambda_g  <- lambda_b <- matrix( c ( #P  V  W  S  g
 ```
 
 In the bifactor model the subtests measure g directly.
+
+![](https://raw.githubusercontent.com/KJKan/pame_I/main/bifactormodel.jpg)
+
 
 ```{r}
 lambda_b[ , ne + 1 ] <- 1

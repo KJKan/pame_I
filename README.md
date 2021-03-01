@@ -307,38 +307,41 @@ lapply( aics,   function(i) table( apply( i, 1, which.min ) ) )
 lapply( bics,   function(i) table( apply( i, 1, which.min ) ) )
 ```
 
+What was our hypothesis?
+
+'If the network is the true model but not considered, the bifactor model is preferred over the higher order factor model' ( as a summary of the data )
 
 ```{r}
-# ------------ investigate hypothesis 
-
-# = 'if the network is the true model but not considered,
-# the bifactor model is preferred over the higher order factor model' 
-# ( as a summary of the data ) 
-
 lapply( rmseas, function(i) table( apply( i[,1:2], 1, which.min ) ) )$NW
 lapply( cfis,   function(i) table( apply( i[,1:2], 1, which.max ) ) )$NW
 lapply( nfis,   function(i) table( apply( i[,1:2], 1, which.max ) ) )$NW
 lapply( aics,   function(i) table( apply( i[,1:2], 1, which.min ) ) )$NW
 lapply( bics,   function(i) table( apply( i[,1:2], 1, which.min ) ) )$NW
+```
 
+And what can be expected if the bifactor model would be the true model?
 
-# And what can be expected if the bifactor model would be the true model?
-
-# AIC and BIC prefer the bifactor model
+```{r}
 lapply( rmseas, function(i) table( apply( i[,1:2], 1, which.min ) ) )$BF
 lapply( cfis,   function(i) table( apply( i[,1:2], 1, which.max ) ) )$BF
 lapply( nfis,   function(i) table( apply( i[,1:2], 1, which.max ) ) )$BF
 lapply( aics,   function(i) table( apply( i[,1:2], 1, which.min ) ) )$BF
 lapply( bics,   function(i) table( apply( i[,1:2], 1, which.min ) ) )$BF
+```
 
+Show in figures
 
-# Show in figures
+```{r}
 layout( matrix( 1:9, 3, 3, TRUE ) )
 hist( ps_diff$HF, main = paste( 'Comparison HF and BF', '\nTrue model = HF' ), xlab = 'P (chisq diff)' )
 hist( ps_diff$BF, main = paste( 'Comparison HF and BF', '\nTrue model = BF' ), xlab = 'P (chisq diff)' )
 hist( ps_diff$NW, main = paste( 'Comparison HF and BF', '\nTrue model = NW' ), xlab = 'P (chisq diff)' )
+```
 
-# absolute fit (chisq): ACCEPT THE MODEL IN 95% OF THE CASES
+In summary:
+
+```
+Absolute fit (chisq): ACCEPT THE MODEL IN 95% OF THE CASES
 hist( unlist( pvalues$BF[,'BF'] ), main = paste( 'BF absolute fit',    '\nTrue model = BF'), xlab = 'P (chisq)' )
 # approximate fit: NEAR PERFECT
 hist( unlist( nfis$BF[,'BF'] ),    main = paste( 'BF approximate fit', '\nTrue model = BF'), xlab = 'nfi' )
@@ -351,16 +354,11 @@ hist( unlist( pvalues$NW[,'BF'] ), main = paste( 'BF absolute fit',    '\nTrue m
 hist( unlist( nfis$NW[,'BF'] ),    main = paste( 'BF approximate fit', '\nTrue model = NW'), xlab = 'nfi' )
 # close fit: acceptable(?)
 hist( unlist( rmseas$NW[,'BF'] ),  main = paste( 'BF close fit',       '\nTrue model = NW'), xlab = 'RMSEA' )
+```
 
+# Conclusions <a name="Conclusion"></a>
 
-
-# ------------ Conclusion
-
-# the empirical results are more in line 
-# with the situation in which the true model is a network model
-# than the situation in which the true model is a bifactor model
-# !
-
+The empirical results are more in line with the situation in which the true model is a network model than in the situation in which the true model is a bifactor model! !
 
 # References <a name="References"></a>
 

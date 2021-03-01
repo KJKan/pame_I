@@ -358,7 +358,7 @@ hist( unlist( nfis$NW[,'BF'] ),    main = paste( 'BF approximate fit', '\nTrue m
 hist( unlist( rmseas$NW[,'BF'] ),  main = paste( 'BF close fit',       '\nTrue model = NW'), xlab = 'RMSEA' )
 ```
 
-![](https://raw.githubusercontent.com/KJKan/Pame_I/master/pame.jpeg)
+![](https://raw.githubusercontent.com/KJKan/pame_I/main/Pame.jpeg)
 
 
 # Conclusions <a name="Conclusion"></a>

@@ -105,6 +105,8 @@ lvars  <- c( "P", # Perceptual
 
 ```
  So 4 in total. In g theory, the variable g explains the correlations among those factors.
+ 
+![](https://raw.githubusercontent.com/KJKan/mcfarland/master/SecondOrdergModel_.jpg)
 
 ```{r}
 ne <- length( lvars ) 
@@ -355,6 +357,9 @@ hist( unlist( nfis$NW[,'BF'] ),    main = paste( 'BF approximate fit', '\nTrue m
 # close fit: acceptable(?)
 hist( unlist( rmseas$NW[,'BF'] ),  main = paste( 'BF close fit',       '\nTrue model = NW'), xlab = 'RMSEA' )
 ```
+
+![](https://raw.githubusercontent.com/KJKan/Pame_I/master/Pame.jpg)
+
 
 # Conclusions <a name="Conclusion"></a>
 

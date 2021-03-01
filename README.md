@@ -368,7 +368,10 @@ hist( unlist( rmseas$NW[,'BF'] ),  main = paste( 'BF close fit',       '\nTrue m
 
 # Conclusions <a name="Conclusion"></a>
 
-The empirical results are more in line with the situation in which the true model is a network model than in the situation in which the true model is a bifactor model! !
+The empirical results are more in line with the situation in which the true model is a network model than in the situation in which the true model is a bifactor model! 
+
+![](https://raw.githubusercontent.com/KJKan/pame_I/main/NW_germany.jpg)
+
 
 # References <a name="References"></a>
 

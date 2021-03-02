@@ -42,13 +42,12 @@ histFitm( pvalues ) # uniformly distributed if the fitted model is the true mode
 #dev.off()
 
 # tables (do fit measures pick the true model when the true model is included in the comparison )
-lapply( rmseas, function(i) table( apply( i, 1, which.min ) ) )
-lapply( cfis,   function(i) table( apply( i, 1, which.max ) ) )
-lapply( tlis,   function(i) table( apply( i, 1, which.max ) ) )
-lapply( nfis,   function(i) table( apply( i, 1, which.max ) ) )
-lapply( aics,   function(i) table( apply( i, 1, which.min ) ) )
-lapply( bics,   function(i) table( apply( i, 1, which.min ) ) )
-
+lapply( rmseas,  function(i) table( apply( i, 1, which.min ) ) )
+lapply( cfis,    function(i) table( apply( i, 1, which.max ) ) )
+lapply( tlis,    function(i) table( apply( i, 1, which.max ) ) )
+lapply( nfis,    function(i) table( apply( i, 1, which.max ) ) )
+lapply( aics,    function(i) table( apply( i, 1, which.min ) ) )
+lapply( bics,    function(i) table( apply( i, 1, which.min ) ) )
 
 
 # ------------ investigate hypothesis 
@@ -57,21 +56,24 @@ lapply( bics,   function(i) table( apply( i, 1, which.min ) ) )
 # the bifactor model is preferred over the higher order factor model' 
 # ( as a summary of the data ) 
 
-lapply( rmseas, function(i) table( apply( i[,1:2], 1, which.min ) ) )$NW
-lapply( cfis,   function(i) table( apply( i[,1:2], 1, which.max ) ) )$NW
-lapply( nfis,   function(i) table( apply( i[,1:2], 1, which.max ) ) )$NW
-lapply( aics,   function(i) table( apply( i[,1:2], 1, which.min ) ) )$NW
-lapply( bics,   function(i) table( apply( i[,1:2], 1, which.min ) ) )$NW
+lapply( rmseas,  function(i) table( apply( i[,1:2], 1, which.min ) ) )$NW
+lapply( cfis,    function(i) table( apply( i[,1:2], 1, which.max ) ) )$NW
+lapply( nfis,    function(i) table( apply( i[,1:2], 1, which.max ) ) )$NW
+lapply( aics,    function(i) table( apply( i[,1:2], 1, which.min ) ) )$NW
+lapply( bics,    function(i) table( apply( i[,1:2], 1, which.min ) ) )$NW
+lapply( ps_diff, function(i) table( i < .05 ) )$NW
+
 
 
 # And what can be expected if the bifactor model would be the true model?
 
 # AIC and BIC prefer the bifactor model
-lapply( rmseas, function(i) table( apply( i[,1:2], 1, which.min ) ) )$BF
-lapply( cfis,   function(i) table( apply( i[,1:2], 1, which.max ) ) )$BF
-lapply( nfis,   function(i) table( apply( i[,1:2], 1, which.max ) ) )$BF
-lapply( aics,   function(i) table( apply( i[,1:2], 1, which.min ) ) )$BF
-lapply( bics,   function(i) table( apply( i[,1:2], 1, which.min ) ) )$BF
+lapply( rmseas,  function(i) table( apply( i[,1:2], 1, which.min ) ) )$BF
+lapply( cfis,    function(i) table( apply( i[,1:2], 1, which.max ) ) )$BF
+lapply( nfis,    function(i) table( apply( i[,1:2], 1, which.max ) ) )$BF
+lapply( aics,    function(i) table( apply( i[,1:2], 1, which.min ) ) )$BF
+lapply( bics,    function(i) table( apply( i[,1:2], 1, which.min ) ) )$BF
+lapply( ps_diff, function(i) table( i < .05 ) )$BF
 
 
 # Show in figures
@@ -80,7 +82,7 @@ hist( ps_diff$HF, main = paste( 'Comparison HF and BF', '\nTrue model = HF' ), x
 hist( ps_diff$BF, main = paste( 'Comparison HF and BF', '\nTrue model = BF' ), xlab = 'P (chisq diff)' )
 hist( ps_diff$NW, main = paste( 'Comparison HF and BF', '\nTrue model = NW' ), xlab = 'P (chisq diff)' )
 
-# absolute fit (chisq): ACCEPT THE MODEL IN 95% OF THE CASES
+# absolute fit (chisq): ACCEPT THE MODEL IN > 95% OF THE CASES
 hist( unlist( pvalues$BF[,'BF'] ), main = paste( 'BF absolute fit',    '\nTrue model = BF'), xlab = 'P (chisq)' )
 # approximate fit: NEAR PERFECT
 hist( unlist( nfis$BF[,'BF'] ),    main = paste( 'BF approximate fit', '\nTrue model = BF'), xlab = 'nfi' )
@@ -93,7 +95,6 @@ hist( unlist( pvalues$NW[,'BF'] ), main = paste( 'BF absolute fit',    '\nTrue m
 hist( unlist( nfis$NW[,'BF'] ),    main = paste( 'BF approximate fit', '\nTrue model = NW'), xlab = 'nfi' )
 # close fit: acceptable(?)
 hist( unlist( rmseas$NW[,'BF'] ),  main = paste( 'BF close fit',       '\nTrue model = NW'), xlab = 'RMSEA' )
-
 
 
 # ------------ Conclusion

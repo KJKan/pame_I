@@ -381,7 +381,7 @@ Hood, S. B. (2008). *Latent variable realism in psychometrics.* Indiana Universi
 
 Jensen, A. R. (1998). *The g factor: The science of mental ability*. Westport, CT: Praeger.
 
-[Kan, K. J., de Jonge, H., van der Maas, H. L. J., Levine, S. Z., & Epskamp, S. (2020). How to Compare Latent Factor Models and Psychometric Network Models. *Journal of Intelligence*.](https://github.com/KJKan/mcfarland/blob/master/jintelligence-844295.pdf)
+[Kan, K. J., de Jonge, H., van der Maas, H. L. J., Levine, S. Z., & Epskamp, S. (2020). How to Compare Latent Factor Models and Psychometric Network Models. *Journal of Intelligence*, 8, *35*](https://github.com/KJKan/mcfarland/blob/master/jintelligence-844295.pdf)
 
 Kan, K. J., van der Maas, H. L. J., & Levine, S. Z. (2019). Extending psychometric network analysis: Empirical evidence against g in favor of mutualism?. *Intelligence, 73*, 52-62.
 

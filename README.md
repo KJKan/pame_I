@@ -64,7 +64,6 @@ What subtests does the WAIS-IV include?
 ```{r}
 yvars     <- colnames( WAIS_US )
 ```
-These are:
 
 These are:
 - Block Design (BD)

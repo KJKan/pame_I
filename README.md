@@ -374,19 +374,19 @@ The empirical results are more in line with the situation in which the true mode
 
 # References <a name="References"></a>
 
-Epskamp, S. (2019). *Psychonetrics*. R package. version 0.7.1.
+[Epskamp, S. (2021). *Psychonetrics*. R package. version 0.8.1.](http://psychonetrics.org/r-package/)
 
-Hood, S. B. (2008). *Latent variable realism in psychometrics.* Indiana University Press
+[Hood, S. B. (2008). *Latent variable realism in psychometrics.* Indiana University Press.](https://core.ac.uk/download/pdf/213815847.pdf)
 
-Jensen, A. R. (1998). *The g factor: The science of mental ability*. Westport, CT: Praeger.
+[Jensen, A. R. (1998). *The g factor: The science of mental ability*. Westport, CT: Praeger.](https://emilkirkegaard.dk/en/wp-content/uploads/The-g-factor-the-science-of-mental-ability-Arthur-R.-Jensen.pdf)
 
 [Kan, K. J., de Jonge, H., van der Maas, H. L. J., Levine, S. Z., & Epskamp, S. (2020). How to Compare Latent Factor Models and Psychometric Network Models. *Journal of Intelligence*, 8, *35*.](https://github.com/KJKan/mcfarland/blob/master/jintelligence-844295.pdf)
 
-Kan, K. J., van der Maas, H. L. J., & Levine, S. Z. (2019). Extending psychometric network analysis: Empirical evidence against g in favor of mutualism?. *Intelligence, 73*, 52-62.
+[Kan, K. J., van der Maas, H. L. J., & Levine, S. Z. (2019). Extending psychometric network analysis: Empirical evidence against g in favor of mutualism?. *Intelligence, 73*, 52-62.](https://scottbarrykaufman.com/wp-content/uploads/2019/02/Kan-et-al.-2019.pdf)
 
-Schermelleh-Engel, K., Moosbrugger, H., & Müller, H. (2003). Evaluating the fit of structural equation models: Tests of significance and descriptive goodness-of-fit measures. *Methods of psychological research online, 8(2)*, 23-74.
+[Schermelleh-Engel, K., Moosbrugger, H., & Müller, H. (2003). Evaluating the fit of structural equation models: Tests of significance and descriptive goodness-of-fit measures. *Methods of psychological research online, 8(2)*, 23-74.](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.509.4258&rep=rep1&type=pdf)
 
-Wechsler, D. (2008). *Wechsler adult intelligence Scale–Fourth edition (WAIS–IV)*. San Antonio, TX: The Psychological Corporation.
+[Wechsler, D. (2008). *Wechsler adult intelligence Scale–Fourth edition (WAIS–IV)*. San Antonio, TX: The Psychological Corporation.](https://www.pearsonassessments.com/store/usassessments/en/Store/Professional-Assessments/Cognition-%26-Neuro/Wechsler-Adult-Intelligence-Scale-%7C-Fourth-Edition/p/100000392.html)
 
 
 

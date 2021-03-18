@@ -48,8 +48,8 @@ source_url( 'https://raw.githubusercontent.com/KJKan/pame_I/main/R/helperfunctio
 Our aim is to use a WAIS-IV network extracted previously (Kan et al., 2020) and to refit that network (confirmatory) in the German standardization sample. So let's load these matrices. 
 
 ```{r}
-load( url ( "https://github.com/KJKan/mcfarland/blob/master/WAIS_US.Rdata?raw=true" ) )
-load( url ( "https://github.com/KJKan/pame_I/blob/main/WAIS_Germany.Rdata?raw=true" ) )
+load( url ( "https://github.com/KJKan/pame_I/blob/main/data/WAIS_US.Rdata?raw=true" ) )
+load( url ( "https://github.com/KJKan/pame_I/blob/main/data/WAIS_Germany.Rdata?raw=true" ) )
 ```
 
 The sample sizes are:
@@ -105,7 +105,7 @@ lvars  <- c( "P", # Perceptual
 ```
  So 4 in total. In g theory, the variable g explains the correlations among those factors.
  
-![](https://raw.githubusercontent.com/KJKan/pame_I/main/gfactormodel.jpg)
+![](https://raw.githubusercontent.com/KJKan/pame_I/main/figures/gfactormodel.jpg)
 
 ```{r}
 ne <- length( lvars ) 
@@ -137,7 +137,7 @@ lambda_g  <- lambda_b <- matrix( c ( #P  V  W  S  g
 
 In the bifactor model the subtests measure g directly.
 
-![](https://raw.githubusercontent.com/KJKan/pame_I/main/bifactormodel.jpg)
+![](https://raw.githubusercontent.com/KJKan/pame_I/main/figures/bifactormodel.jpg)
 
 
 ```{r}
@@ -360,16 +360,16 @@ hist( unlist( nfis$NW[,'BF'] ),    main = paste( 'BF approximate fit', '\nTrue m
 hist( unlist( rmseas$NW[,'BF'] ),  main = paste( 'BF close fit',       '\nTrue model = NW'), xlab = 'RMSEA' )
 ```
 
-![](https://raw.githubusercontent.com/KJKan/pame_I/main/Pame.jpeg)
+![](https://raw.githubusercontent.com/KJKan/pame_I/main/figures/Pame.jpg)
 
-![](https://raw.githubusercontent.com/KJKan/pame_I/main/Cucina%20Table%201.jpg)
+![](https://raw.githubusercontent.com/KJKan/pame_I/main/figures/Cucina%20Table%201.jpg)
 
 
 # Conclusions <a name="Conclusion"></a>
 
 The empirical results are more in line with the situation in which the true model is a network model than in the situation in which the true model is a bifactor model! 
 
-![](https://raw.githubusercontent.com/KJKan/pame_I/main/NW_germany.jpeg)
+![](https://raw.githubusercontent.com/KJKan/pame_I/main/figures/NW_germany.jpg)
 
 
 # References <a name="References"></a>

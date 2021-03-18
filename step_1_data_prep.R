@@ -10,8 +10,8 @@ library( "devtools" )
 source_url( 'https://raw.githubusercontent.com/KJKan/pame_I/main/helperfunctions.R' )
 
 # Load WAIS-IV correlation matrices
-load( url ( "https://github.com/KJKan/mcfarland/blob/master/WAIS_US.Rdata?raw=true" ) )
-load( url ( "https://github.com/KJKan/pame_I/blob/main/WAIS_Germany.Rdata?raw=true" ) )
+load( url ( "https://github.com/KJKan/pame_I/blob/main/data//WAIS_US.Rdata?raw=true" ) )
+load( url ( "https://github.com/KJKan/pame_I/blob/main/data/WAIS_Germany.Rdata?raw=true" ) )
 
 # WAIS-IV sample Sizes
 n_US      <- 1800 

@@ -42,7 +42,7 @@ Load required packages and some helper functions
 library( "psychonetrics" )
 library( "dplyr" )
 library( "devtools" )
-source_url( 'https://raw.githubusercontent.com/KJKan/pame_I/main/helperfunctions.R' )
+source_url( 'https://raw.githubusercontent.com/KJKan/pame_I/main/R/helperfunctions.R' )
 ```
 
 Our aim is to use a WAIS-IV network extracted previously (Kan et al., 2020) and to refit that network (confirmatory) in the German standardization sample. So let's load these matrices. 

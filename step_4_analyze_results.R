@@ -7,7 +7,7 @@ rm(list = ls())
 library( "psychonetrics" )
 library( "dplyr" )
 library( "devtools" )
-source_url( 'https://raw.githubusercontent.com/KJKan/pame_I/main/helperfunctions.R' )
+source_url( 'https://raw.githubusercontent.com/KJKan/pame_I/main/R/helperfunctions.R' )
 
 # load list of results 
 load( url( 'https://www.dropbox.com/s/w3yqqxdz54ic3rd/simres.Rdata?raw=TRUE' ) )

@@ -286,7 +286,7 @@ aics    <- extractFitm( simres, 'aic.ll' )
 bics    <- extractFitm( simres, 'bic'    )
 dchisqs <- lapply( chisqs, function(i) apply(i, 1, function(i) i$HF-i$BF ) )
 ddfs    <- lapply( dfs,    function(i) apply(i, 1, function(i) i$HF-i$BF ) )
-ps_diff <- lapply( dchisqs, function(i) 1- pchisq( i, df = 11 ) )
+ps_diff <- lapply( dchisqs, function(i) 1 - pchisq( i, df = 11 ) )
 ```
 Let's plot the most important results
 

@@ -14,7 +14,7 @@
 
 This is a preliminary simulation study conducted in order to explain why bifactor models fit significantly better than higher order factor models. See https://osf.io/xp869/ for the official final study and documentation.
 
-The aim is to test the suggestion by Kan et al (2020) that if a network model is the actual data generating mechanism, a bifactor model will likely outperform the higher order factor model in summarizing the data.
+The aim was to test the suggestion by Kan et al (2020) that if a network model is the actual data generating mechanism, a bifactor model will likely outperform the higher order factor model in summarizing the data.
 
 To this end we first simulate data according three models:
 - A (second order) g model                                                    

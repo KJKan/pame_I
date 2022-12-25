@@ -1,4 +1,4 @@
-# Why do bifactor models outperform higher order factor models? A network perspective
+# Why do bifactor models outperform higher-order _g_ factor models? A network perspective
 
 ## Table of content
 - [Introduction](#Intro)
